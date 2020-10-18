@@ -22,6 +22,9 @@ public class coinChange {
     //备忘录防止重复便利
     static HashMap<Integer,Integer> memo=new HashMap<>();
     public static int coinChange(int[] coins, int amount){
+        float a=11;
+        byte b=123;
+
         all=coins;
         return dp(amount);
     }

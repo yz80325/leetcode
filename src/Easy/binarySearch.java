@@ -6,10 +6,16 @@ package Easy;
 * */
 public class binarySearch {
 
+    public static void main(String[] args) {
+        double a=3,b=2.9;
+        double c=a-b;
+        int[] aa= new int[]{1,1,2,2,4,5};
+        BinarySearch1(aa,2);
+    }
     /*
     * 最简单二分
     * */
-    private int BinarySearch1(int[] nums,int target){
+    private static int BinarySearch1(int[] nums,int target){
         if (nums.length==0){
             return 0;
         }
