@@ -6,7 +6,9 @@ package Normal;
 * 11
 * */
 public class MaxArea {
+    int a= (int) Double.MIN_VALUE;
     public int maxArea(int[] height) {
+
         //右指针
         int j=height.length-1;
         //结果
