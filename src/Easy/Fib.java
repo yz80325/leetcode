@@ -11,7 +11,7 @@ import java.util.Vector;
 public class Fib {
 
     public static void main(String[] args) {
-        fib(10);
+        System.out.println( fib(2));
     }
     static int fib(int N){
         if (N<1)return 0;

@@ -1,6 +1,7 @@
 package Easy;
 
 import java.util.Arrays;
+import java.util.Queue;
 
 /*
 *
@@ -12,35 +13,30 @@ public class FindCoins {
     private static int[]coins=null;
 
     public static void main(String[] args) {
-        coinChange(1,new int[]{2,3,5});
+        coinChange(new int[]{2,3,5},11);
+
     }
-    /*
+    /**
     * @Param amount 价格
     * @Param coins  硬币
     *
     * */
-    private static void coinChange(int amount,int[] aa){
-        coins=aa;
-        find(amount);
-
-    }
-    //寻找硬币
-    private static void find(int n){
-
-        int temp[] = new int[n+1];
-        for(int i=1;i<temp.length;i++) { //取的硬币的数量
-            int minV = i; //初始化最小的为minV，因为最小取的硬币数量肯定不会比i还要大
-            for(int j=0;j<coins.length;j++) {
-                if(i>=coins[j]) { //取的硬币的数目比有的数目要大。
-                    int k = temp[i-coins[j]] + 1; //状态转移方程，前面介绍的。
-                    if(k<minV) {
-                        minV = k;  //保存了，这一趟比较的最小的取的硬币值
-                    }
-                }
-            }
-            temp[i] = minV;
+    public static int coinChange(int[] coins, int amount) {
+        if (coins==null||coins.length==0){
+            return -1;
         }
-        System.out.println("至少需要" + temp[n] + "枚硬币");
+        int[] res=new int[amount+1];
+        Arrays.fill(res,amount+1);
+        res[0]=0;
+        for (int i=1;i<res.length;i++){
+            for (int coin:coins){
+                if (i-coin<0){
+                    continue;
+                }
+                res[i]=Math.min(res[i],res[i-coin]+1);
+            }
 
+        }
+        return res[amount]==amount+1?-1:res[amount];
     }
 }
