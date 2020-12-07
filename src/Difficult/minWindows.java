@@ -10,6 +10,7 @@ import java.util.Map;
 public class minWindows {
 
     public static void main(String[] args) {
+
         String a = minWindow("ADOBECODEBANC","ABC");
         System.out.println(a);
     }

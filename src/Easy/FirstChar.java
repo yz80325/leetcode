@@ -1,13 +1,12 @@
 package Easy;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class FirstChar {
     public static void main(String[] args) {
+        Stack<Integer>stack=new Stack<>();
+
         System.out.println(FirstChar1("ashwyagujkasdhj"));
     }
     private static String FirstChar1(String a){

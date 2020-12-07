@@ -4,15 +4,19 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/*
+/**
 *239
-* */
+*
+**/
 public class maxWindows {
+    public static void main(String[] args) {
+        maxSlidingWindow(new int[]{1,3,-1,-3,5,3,6,7},3);
+    }
 
     /**
     * 单调队列
     * */
-    class MonotonicQueue{
+    static class MonotonicQueue{
         LinkedList<Integer> q=new LinkedList<>();
 
         public void push(int data){
@@ -35,7 +39,7 @@ public class maxWindows {
         }
     }
 
-    public int[] maxSlidingWindow(int[] nums, int k) {
+    public static int[] maxSlidingWindow(int[] nums, int k) {
         MonotonicQueue monotonicQueue=new MonotonicQueue();
         List<Integer> res=new ArrayList<>();
         for (int i=0;i<nums.length;i++){
